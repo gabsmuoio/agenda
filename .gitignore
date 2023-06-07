@@ -4,6 +4,10 @@
 *.pyc
 __pycache__
 db.sqlite3
+delete_table.py
+static/
+media/
+project/local_settings.py
 
 # Backup files #
 *.bak
