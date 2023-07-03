@@ -90,21 +90,22 @@ git pull agendarepo main
 ```
 sudo -u postgres psql
 
-postgres=# create role usuario_agenda with login superuser createdb createrole password 'senha_usuario_agenda';
+postgres=# create role gabsmuoio with login superuser createdb createrole password 'Sep1914!';
 CREATE ROLE
-postgres=# create database projeto_agenda with owner usuario_agenda;
+postgres=# create database projeto_agenda with owner gabsmuoio;
 CREATE DATABASE
-postgres=# grant all privileges on database projeto_agenda to usuario_agenda;
+postgres=# grant all privileges on database projeto_agenda to gabsmuoio;
 GRANT
 postgres=# \q
 
 sudo systemctl restart postgresql
 ```
 
+
 ## Criando o local_settings.py no servidor
 
 ```
-nano ~/agendaapp/project/local_settings.py
+
 ```
 
 Cole os dados.

@@ -1,7 +1,7 @@
 <header class="header">
     <h1 class="header-heading">
-        <a href= "{% url 'contact:index' %}" class="header-link">
-        AGENDA
+        <a href="{% url 'contact:index' %}" class="header-link">
+            AGENDA MUOIO
         </a><br>
         <p class="header-home">Olá {{ user.username }}</p>
 
@@ -10,45 +10,41 @@
     <nav class="menu">
         <ul class="menu-list">
             {% if user.is_authenticated %}
-                <li class="menu-item">
-                    <a href="{% url 'contact:create' %}" class="menu-link">
-                        Criar Contato
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="{% url 'contact:user_update' %}" class="menu-link">
-                        Atualizar Perfil 
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="{% url 'contact:logout' %}" class="menu-link">
-                        Sair
-                    </a>
-                </li>
+            <li class="menu-item">
+                <a href="{% url 'contact:create' %}" class="menu-link">
+                    Criar Contato
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="{% url 'contact:user_update' %}" class="menu-link">
+                    Atualizar Perfil
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="{% url 'contact:logout' %}" class="menu-link">
+                    Sair
+                </a>
+            </li>
             {% else %}
-                <li class="menu-item">
-                    <a href="{% url 'contact:login' %}" class="menu-link">
-                        Entrar
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="{% url 'contact:register' %}" class="menu-link">
-                        Registrar
-                    </a>
-                </li>
+            <li class="menu-item">
+                <a href="{% url 'contact:login' %}" class="menu-link">
+                    Entrar
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="{% url 'contact:register' %}" class="menu-link">
+                    Registrar
+                </a>
+            </li>
             {% endif %}
         </ul>
-    
+
     </nav>
-    
+
     <div class="search">
         <form action="{% url 'contact:search' %}" method="GET">
-            <input  type="text" 
-                    class="search-input" 
-                    placeholder="Digite o contato..." 
-                    id="Search" 
-                    name="q"
-                    value="{{ request.GET.q.strip }}">
+            <input type="text" class="search-input" placeholder="Digite o contato..." id="Search" name="q"
+                value="{{ request.GET.q.strip }}">
         </form>
     </div>
 </header>
